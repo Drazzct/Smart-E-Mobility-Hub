@@ -1,0 +1,4 @@
+export const CRITICAL_BATTERY_THRESHOLD = 20;
+
+export const HUB_WARNING_FILL_PCT = 70;
+export const HUB_CRITICAL_FILL_PCT = 90;
