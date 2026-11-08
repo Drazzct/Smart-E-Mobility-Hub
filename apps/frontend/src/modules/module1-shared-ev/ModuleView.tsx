@@ -202,43 +202,15 @@ export function Module1SharedEV() {
   };
 
   return (
-    <div className="module1-app">
-      <aside className="sidebar">
-        <div className="brand">
-          <div className="brand-mark">N</div>
-          <div><strong>NVNNHub</strong><span>Smart E-Mobility</span></div>
-        </div>
-        <div className="sidebar-label">STUDENT SERVICES</div>
-        <nav className="main-nav" aria-label="Shared EV workflows">
-          <button className={activeTab === "find" ? "nav-item active" : "nav-item"} onClick={() => { setActiveTab("find"); setNotice(null); }}>
-            <span className="nav-icon">⌕</span><span>Find a vehicle</span>
-          </button>
-          <button className={activeTab === "reserve" ? "nav-item active" : "nav-item"} onClick={() => { setActiveTab("reserve"); setNotice(null); }}>
-            <span className="nav-icon">▣</span><span>My reservation</span>
-            {activeReservation && <span className="nav-dot" />}
-          </button>
-          <button className={activeTab === "pickup" ? "nav-item active" : "nav-item"} onClick={() => { setActiveTab("pickup"); setNotice(null); }}>
-            <span className="nav-icon">↗</span><span>Pick up</span>
-            {activeReservation && <span className="nav-dot" />}
-          </button>
-          <button className={activeTab === "return" ? "nav-item active" : "nav-item"} onClick={() => { setActiveTab("return"); setNotice(null); }}>
-            <span className="nav-icon">↙</span><span>Return vehicle</span>
-            {activeSession && <span className="nav-dot" />}
-          </button>
-        </nav>
-        <div className="sidebar-bottom">
-          <div className="user-avatar">ST</div>
-          <div className="user-info"><strong>Student User</strong><span>Student account</span></div>
-          <span className="more-icon">···</span>
-        </div>
-      </aside>
+    <div className="module4-container">
+      <div className="module4-tabs">
+        <button className={activeTab === "find" ? "tab-button active" : "tab-button"} onClick={() => { setActiveTab("find"); setNotice(null); }}>⌕ Find a vehicle</button>
+        <button className={activeTab === "reserve" ? "tab-button active" : "tab-button"} onClick={() => { setActiveTab("reserve"); setNotice(null); }}>▣ My reservation {activeReservation && <span className="nav-dot" />}</button>
+        <button className={activeTab === "pickup" ? "tab-button active" : "tab-button"} onClick={() => { setActiveTab("pickup"); setNotice(null); }}>↗ Pick up {activeReservation && <span className="nav-dot" />}</button>
+        <button className={activeTab === "return" ? "tab-button active" : "tab-button"} onClick={() => { setActiveTab("return"); setNotice(null); }}>↙ Return vehicle {activeSession && <span className="nav-dot" />}</button>
+      </div>
 
-      <main className="main-content">
-        <header className="topbar">
-          <div className="breadcrumbs">Student Portal <span>/</span> Shared EV Management</div>
-          <div className="topbar-right"><span className="connection-dot" /> Demo data <span className="topbar-divider" /> <div className="small-avatar">ST</div></div>
-        </header>
-
+      <div className="module4-content">
         <div className="page-container">
           <div className="page-heading">
             <div>
@@ -248,6 +220,9 @@ export function Module1SharedEV() {
             </div>
             <div className="date-chip"><span>◷</span> VNU-HCM Urban Area</div>
           </div>
+
+
+
 
           <section className="stats-grid">
             <div className="stat-card"><div className="stat-top"><span>Available vehicles</span><span className="stat-icon green">↗</span></div><strong>{availableCount.toString().padStart(2, "0")}</strong><small>Ready to reserve</small></div>
@@ -350,7 +325,7 @@ export function Module1SharedEV() {
           )}
           <footer className="page-footer"><span>MoveHub · Module 1: Shared EV Management</span><span>Prototype with local demo state · No backend connected</span></footer>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
