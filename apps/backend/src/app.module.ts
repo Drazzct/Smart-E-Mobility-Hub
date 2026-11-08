@@ -9,8 +9,11 @@ import { CoordinationModule } from './modules/coordination/coordination.module.j
     SharedEvModule,
     CoordinationModule,
   ],
+import { MonitoringModule } from './modules/monitoring/monitoring.module.js';
+
+@Module({
+  imports: [SharedEvModule, MonitoringModule],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-
